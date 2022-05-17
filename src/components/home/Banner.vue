@@ -65,4 +65,10 @@
   border-radius: 8rem 8rem 8rem 10.625rem;
   margin-bottom: -5.5rem;
 }
+
+@media screen and (max-width: 767px) {
+  .banner img {
+    margin-top: 2rem;
+  }
+}
 </style>
