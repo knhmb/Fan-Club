@@ -4,12 +4,12 @@
       <el-row>
         <el-col>
           <el-form-item label="Username">
-            <el-input></el-input>
+            <el-input v-model="ruleForm.username"></el-input>
           </el-form-item>
         </el-col>
         <el-col>
           <el-form-item label="Password">
-            <el-input></el-input>
+            <el-input v-model="ruleForm.password" type="password"></el-input>
           </el-form-item>
         </el-col>
         <el-col>
@@ -37,6 +37,19 @@
     </el-form>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      ruleForm: {
+        username: "",
+        password: "",
+      },
+    };
+  },
+};
+</script>
 
 <style>
 .login .login-form .el-form-item__label {

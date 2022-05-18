@@ -1,7 +1,12 @@
 <template>
   <header class="header">
     <base-container>
-      <img src="../../assets/brand-logo-with-text@2x.png" alt="" />
+      <img
+        @click="$router.push('/')"
+        class="company-logo"
+        src="../../assets/brand-logo-with-text@2x.png"
+        alt=""
+      />
       <div v-if="!isMobileViewport" class="search-bar">
         <img class="language" src="../../assets/language.svg" alt="" />
         <el-input
@@ -76,6 +81,10 @@ export default {
 }
 .header img {
   width: 6rem;
+}
+
+.header img.company-logo {
+  cursor: pointer;
 }
 
 .header .search-bar {

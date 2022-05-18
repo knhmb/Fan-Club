@@ -19,27 +19,30 @@
         </el-col>
         <el-col>
           <el-form-item label="Username">
-            <el-input></el-input>
+            <el-input v-model="ruleForm.username"></el-input>
           </el-form-item>
         </el-col>
         <el-col>
           <el-form-item label="Email">
-            <el-input></el-input>
+            <el-input v-model="ruleForm.email"></el-input>
           </el-form-item>
         </el-col>
         <el-col>
           <el-form-item label="Name">
-            <el-input></el-input>
+            <el-input v-model="ruleForm.name"></el-input>
           </el-form-item>
         </el-col>
         <el-col>
           <el-form-item label="Password">
-            <el-input></el-input>
+            <el-input v-model="ruleForm.password" type="password"></el-input>
           </el-form-item>
         </el-col>
         <el-col>
           <el-form-item label="Confirm Password">
-            <el-input></el-input>
+            <el-input
+              v-model="ruleForm.confirmPassword"
+              type="password"
+            ></el-input>
           </el-form-item>
         </el-col>
         <el-col>
@@ -55,6 +58,22 @@
     </el-form>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      ruleForm: {
+        username: "",
+        email: "",
+        name: "",
+        password: "",
+        confirmPassword: "",
+      },
+    };
+  },
+};
+</script>
 
 <style>
 .register .register-form .el-form-item__label {
