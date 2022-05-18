@@ -17,11 +17,11 @@
           <!-- <pagination /> -->
         </template>
       </carousel>
-      <!-- MEMBER CAROUSEL -->
-      <carousel class="member-carousel" :breakpoints="breakpointsMember">
+      <!-- <el-row> -->
+      <carousel :breakpoints="breakpoints">
         <slide v-for="slide in data" :key="slide">
           <div class="card">
-            <img :src="slide.thumbnail" alt="" />
+            <img src="../../assets/creator01@2x.jpg" alt="" />
             <div class="content">
               <p class="name">{{ slide.name }}</p>
               <p class="desc">
@@ -36,79 +36,11 @@
           </div>
         </slide>
         <template #addons>
-          <!-- <navigation /> -->
+          <navigation />
           <!-- <pagination /> -->
         </template>
       </carousel>
-      <el-row :gutter="20">
-        <!-- <el-col :sm="12" :md="6">
-          <div class="card">
-            <img src="../../assets/creator01@2x.jpg" alt="" />
-            <div class="content">
-              <p class="name">Ronald Richards</p>
-              <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
-                duis magna turpis ac urna, id iaculis semper platea.
-              </p>
-              <div class="subscribers">
-                <img class="heart" src="../../assets/heart-small.svg" alt="" />
-                <span>8078 Subscriber</span>
-              </div>
-            </div>
-          </div>
-        </el-col>
-        <el-col :sm="12" :md="6">
-          <div class="card">
-            <img src="../../assets/creator02@2x.jpg" alt="" />
-            <div class="content">
-              <p class="name">Robert Fox</p>
-              <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
-                duis magna turpis ac urna, id iaculis semper platea.
-              </p>
-              <div class="subscribers">
-                <img class="heart" src="../../assets/heart-small.svg" alt="" />
-                <span>8078 Subscriber</span>
-              </div>
-            </div>
-          </div>
-        </el-col>
-        <el-col :sm="12" :md="6">
-          <div class="card">
-            <img src="../../assets/creator03@2x.jpg" alt="" />
-            <div class="content">
-              <p class="name">Guy Hawkins</p>
-              <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
-                duis magna turpis ac urna, id iaculis semper platea.
-              </p>
-              <div class="subscribers">
-                <img class="heart" src="../../assets/heart-small.svg" alt="" />
-                <span>8078 Subscriber</span>
-              </div>
-            </div>
-          </div>
-        </el-col>
-        <el-col :sm="12" :md="6">
-          <div class="card">
-            <img src="../../assets/creator04@2x.jpg" alt="" />
-            <div class="content">
-              <p class="name">Cameron Williamson</p>
-              <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
-                duis magna turpis ac urna, id iaculis semper platea.
-              </p>
-              <div class="subscribers">
-                <img class="heart" src="../../assets/heart-small.svg" alt="" />
-                <span>8078 Subscriber</span>
-              </div>
-            </div>
-          </div>
-        </el-col> -->
-        <el-col class="hidden-background">
-          <el-button>Explore creators</el-button>
-        </el-col>
-      </el-row>
+      <!-- </el-row> -->
     </base-container>
   </section>
 </template>
@@ -138,20 +70,19 @@ export default {
       ],
       data: [
         {
-          thumbnail: require("../../assets/creator01@2x.jpg"),
           name: "Ronald Richards",
         },
         {
-          thumbnail: require("../../assets/creator02@2x.jpg"),
-          name: "Robert Fox",
+          name: "Khaled",
         },
         {
-          thumbnail: require("../../assets/creator03@2x.jpg"),
-          name: "Guy Hawkins",
+          name: "Mohammed",
         },
         {
-          thumbnail: require("../../assets/creator04@2x.jpg"),
-          name: "Cameron Williamson",
+          name: "Hassan",
+        },
+        {
+          name: "Tareq",
         },
       ],
       breakpoints: {
@@ -162,19 +93,7 @@ export default {
         },
         // 1024 and up
         1024: {
-          itemsToShow: 6,
-          snapAlign: "start",
-        },
-      },
-      breakpointsMember: {
-        // 700px and up
-        700: {
-          itemsToShow: 2.5,
-          snapAlign: "center",
-        },
-        // 1024 and up
-        1024: {
-          itemsToShow: 4.3,
+          itemsToShow: 4,
           snapAlign: "start",
         },
       },
@@ -190,7 +109,11 @@ export default {
   padding: 3rem 0;
 }
 
-.explore .carousel.member-carousel .carousel__slide {
+.explore .carousel {
+  width: 100%;
+}
+
+.explore .carousel__slide {
   margin-right: 1rem;
 }
 
@@ -243,7 +166,9 @@ export default {
 
 .explore .card {
   margin-top: 2rem;
+  /* margin-right: 1rem; */
   text-align: start;
+  width: 100%;
 }
 
 .explore .card img {
