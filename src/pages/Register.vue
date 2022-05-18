@@ -1,20 +1,20 @@
 <template>
-  <section class="login">
+  <section class="register">
     <base-container>
       <base-card>
-        <h3>Log in</h3>
+        <h3>Sign up</h3>
         <Form />
       </base-card>
       <p>
-        Don't have an account?
-        <span @click="$router.push('/register')">Sign up</span>
+        Already have an account?
+        <span @click="$router.push('/login')">Log in</span>
       </p>
     </base-container>
   </section>
 </template>
 
 <script>
-import Form from "../components/login/Form.vue";
+import Form from "../components/register/Form.vue";
 
 export default {
   components: {
@@ -24,11 +24,11 @@ export default {
 </script>
 
 <style scoped>
-.login {
+.register {
   padding: 0.5rem 0;
 }
 
-.login h3 {
+.register h3 {
   text-align: center;
   letter-spacing: -0.02em;
   font-feature-settings: "liga" off;
@@ -36,7 +36,7 @@ export default {
   margin-bottom: 2rem;
 }
 
-.login p {
+.register p {
   font-family: "PingFang HK";
   font-style: normal;
   font-weight: 400;
@@ -48,13 +48,13 @@ export default {
   margin-top: 1rem;
 }
 
-.login span {
+.register span {
   font-weight: 500;
   color: #0faaec;
   cursor: pointer;
 }
 
-.login span:hover {
+.register span:hover {
   text-decoration: underline;
 }
 </style>
