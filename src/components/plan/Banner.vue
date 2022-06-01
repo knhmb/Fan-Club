@@ -4,10 +4,10 @@
   </div>
   <base-container>
     <el-row>
-      <el-col :span="3">
-        <img src="../../assets/creator01@2x.jpg" alt="" />
+      <el-col :xs="24" :sm="3" :md="3">
+        <img class="avatar" src="../../assets/creator01@2x.jpg" alt="" />
       </el-col>
-      <el-col :span="9">
+      <el-col :sm="18" :md="9">
         <div class="personal-info">
           <h3>Ronald Richards</h3>
           <p>
@@ -22,8 +22,12 @@
           </p>
         </div>
       </el-col>
-      <el-col :span="12">
-        <el-button class="follow-me">Follow</el-button>
+      <el-col :sm="24" :md="12">
+        <el-button class="follow-me" :icon="Plus">Follow</el-button>
+        <el-button class="become-a-fan"
+          ><img src="../../assets/become-fan@2x.png" alt="" /> Become a
+          Fan</el-button
+        >
       </el-col>
     </el-row>
   </base-container>
@@ -38,25 +42,65 @@
     </div>
   </base-container> -->
   <div class="tab-section">
-    <el-tabs v-model="activeName" class="demo-tabs">
+    <base-container>
+      <ul>
+        <li
+          @click="setTabOption('home')"
+          :class="{ 'is-active': tabOption === 'home' }"
+        >
+          Home
+        </li>
+        <li
+          @click="setTabOption('plan')"
+          :class="{ 'is-active': tabOption === 'plan' }"
+        >
+          Plan
+        </li>
+        <li
+          @click="setTabOption('post')"
+          :class="{ 'is-active': tabOption === 'post' }"
+        >
+          Post
+        </li>
+        <li
+          @click="setTabOption('product')"
+          :class="{ 'is-active': tabOption === 'product' }"
+        >
+          Product
+        </li>
+      </ul>
+    </base-container>
+    <!-- <el-tabs v-model="activeName" class="demo-tabs">
       <el-tab-pane label="Home" name="home">Home</el-tab-pane>
       <el-tab-pane label="Plan" name="plan"><plan-tab></plan-tab></el-tab-pane>
       <el-tab-pane label="Post" name="post">Post</el-tab-pane>
-    </el-tabs>
+    </el-tabs> -->
   </div>
+  <plan-tab v-if="tabOption === 'plan'"></plan-tab>
+  <product v-if="tabOption === 'product'"></product>
 </template>
 
 <script>
 import PlanTab from "../../components/plan/PlanTab.vue";
+import Product from "../../components/plan/Product.vue";
+import { Plus } from "@element-plus/icons-vue";
 
 export default {
   components: {
     PlanTab,
+    Product,
   },
   data() {
     return {
       activeName: "plan",
+      Plus,
+      tabOption: "",
     };
+  },
+  methods: {
+    setTabOption(option) {
+      this.tabOption = option;
+    },
   },
 };
 </script>
@@ -139,6 +183,17 @@ export default {
   margin-right: 0.5rem;
 }
 
+.plan .el-button {
+  padding: 1.2rem 2rem;
+  border-radius: 40px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 540;
+  font-size: 14px;
+  line-height: 20px;
+  font-variation-settings: "slnt" 0;
+}
+
 .plan .el-button.follow-me {
   background: linear-gradient(
       0deg,
@@ -146,15 +201,78 @@ export default {
       rgba(15, 170, 236, 0.15)
     ),
     #ffffff;
-  border-radius: 40px;
 
+  color: #0faaec;
+}
+
+.plan .el-button.follow-me .el-icon {
+  color: #0faaec;
+  margin-right: 0.5rem;
+}
+
+.plan .el-button.become-a-fan {
+  background: #0faaec;
+  color: #fff;
+}
+
+.plan .el-button.become-a-fan img {
+  width: 1.2rem;
+  border-radius: 0;
+  border: none;
+  margin-right: 0.5rem;
+}
+
+.plan .tab-section {
+  border-bottom: 1px solid #cfdce6;
+  padding-bottom: 0.7rem;
+  margin-top: 1rem;
+  /* margin-bottom: 2rem; */
+}
+
+.plan .tab-section .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.plan .tab-section ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.plan .tab-section ul li {
+  margin-right: 4rem;
   font-family: "Inter";
   font-style: normal;
   font-weight: 540;
   font-size: 14px;
   line-height: 20px;
-  color: #0faaec;
+  color: #292929;
   font-variation-settings: "slnt" 0;
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  /* width: 3rem; */
+}
+
+.plan .tab-section ul li:hover {
+  color: #0faaec;
+}
+
+.plan .tab-section ul li.is-active {
+  color: #0faaec;
+}
+
+.plan .tab-section ul li.is-active::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 3px;
+  background: #0faaec;
+  left: 50%;
+  transform: translateX(-50%);
+  /* left: -50%; */
+  /* transform: translateX(15%); */
+  bottom: -0.7rem;
 }
 
 .plan .tab-section .el-tabs__nav-wrap.is-top {
@@ -173,5 +291,37 @@ export default {
 
 .plan .tab-section .el-tabs__item.is-active {
   color: #0faaec;
+}
+
+@media screen and (max-width: 991px) {
+  .plan .el-button {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .plan img.avatar {
+    width: 7rem;
+    margin: auto;
+    display: block;
+  }
+
+  .plan .el-col:nth-of-type(2) {
+    text-align: center;
+  }
+
+  .plan .subscribers-content {
+    margin: 1rem auto;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .plan .el-button {
+    margin: 0;
+  }
+
+  .plan .el-button.follow-me {
+    margin-right: 0.5rem;
+  }
 }
 </style>

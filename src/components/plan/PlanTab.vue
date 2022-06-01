@@ -1,7 +1,7 @@
 <template>
   <div class="plan-tab">
     <base-container>
-      <h3>Select a membership level</h3>
+      <!-- <h3>Select a membership level</h3> -->
       <el-row :gutter="20">
         <el-col :sm="12" :md="8">
           <div class="plan-card">
@@ -130,7 +130,9 @@
 
 <style scoped>
 .plan-tab {
-  padding: 3rem 0;
+  padding: 1rem 0;
+  background-color: #cfdce6;
+  /* margin-top: 1rem; */
 }
 
 .plan-tab .el-col {
@@ -154,6 +156,7 @@
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
+  background: #fff;
 }
 
 .plan-tab .plan-card p.plan-name {

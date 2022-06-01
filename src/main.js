@@ -6,6 +6,8 @@ import router from "./route";
 import BaseContainer from "./ui/BaseContainer.vue";
 import BaseCard from "./ui/BaseCard.vue";
 
+import "element-plus/theme-chalk/display.css";
+
 const app = createApp(App);
 
 app.component("base-container", BaseContainer);
