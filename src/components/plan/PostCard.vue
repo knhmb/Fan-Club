@@ -1,7 +1,8 @@
 <template>
   <div class="post-card">
-    <el-row>
-      <el-col :span="18">
+    <el-row :gutter="20">
+      <el-col :span="17">
+        <!-- ========================================= First Card ========================================= -->
         <div class="card">
           <img src="../../assets/creator-post-img01@2x.jpg" alt="" />
           <Carousel :wrap-around="true" :breakpoints="breakpoints">
@@ -17,6 +18,32 @@
             <post-card-info></post-card-info>
           </div>
         </div>
+        <!-- ========================================= Second Card ========================================= -->
+
+        <div class="card">
+          <div class="background-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit Tincidunt
+              fringilla eu lobortis aliquet mauris.
+            </p>
+          </div>
+          <!-- <img src="../../assets/creator-post-img01@2x.jpg" alt="" /> -->
+          <!-- <Carousel :wrap-around="true" :breakpoints="breakpoints">
+            <Slide v-for="img in imgs" :key="img">
+              <img class="slider-img" :src="img.img" alt="" />
+            </Slide>
+
+            <template #addons>
+              <Navigation />
+            </template>
+          </Carousel> -->
+          <div class="post-card-content">
+            <post-card-info></post-card-info>
+          </div>
+        </div>
+      </el-col>
+      <el-col :span="7">
+        <popular-posts></popular-posts>
       </el-col>
     </el-row>
   </div>
@@ -25,6 +52,7 @@
 <script>
 import { Carousel, Navigation, Slide } from "vue3-carousel";
 import PostCardInfo from "./PostCardInfo.vue";
+import PopularPosts from "./PopularPosts.vue";
 
 export default {
   components: {
@@ -32,6 +60,7 @@ export default {
     Navigation,
     Slide,
     PostCardInfo,
+    PopularPosts,
   },
   data() {
     return {
@@ -86,6 +115,28 @@ export default {
 .post-card .card {
   background: #ffffff;
   border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.post-card .card .background-content {
+  background: linear-gradient(76.94deg, #88bff6 0%, #c8a8f1 100%);
+  padding: 1rem 5rem;
+  width: 100%;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.post-card .card .background-content p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: #191919;
 }
 
 .post-card .card img {

@@ -108,7 +108,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .plan .banner {
   background-image: url("../../assets/creator-page-banner@2x.jpg");
   background-size: cover;

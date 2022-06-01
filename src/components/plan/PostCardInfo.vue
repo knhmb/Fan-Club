@@ -57,6 +57,7 @@
   width: 3rem;
   border: none;
   margin: 0;
+  border-radius: 100%;
 }
 
 .plan .post-card-info .el-row .el-col {
@@ -66,6 +67,7 @@
 .plan .post-card-info .el-row .el-col:nth-of-type(2) {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .post-card-info .content {
