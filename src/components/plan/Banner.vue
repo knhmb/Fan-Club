@@ -78,23 +78,26 @@
   </div>
   <plan-tab v-if="tabOption === 'plan'"></plan-tab>
   <product v-if="tabOption === 'product'"></product>
+  <Post v-if="tabOption === 'post'" />
 </template>
 
 <script>
 import PlanTab from "../../components/plan/PlanTab.vue";
 import Product from "../../components/plan/Product.vue";
+import Post from "../../components/plan/Post.vue";
 import { Plus } from "@element-plus/icons-vue";
 
 export default {
   components: {
     PlanTab,
     Product,
+    Post,
   },
   data() {
     return {
       activeName: "plan",
       Plus,
-      tabOption: "",
+      tabOption: "post",
     };
   },
   methods: {

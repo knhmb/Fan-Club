@@ -7,6 +7,7 @@ import BaseContainer from "./ui/BaseContainer.vue";
 import BaseCard from "./ui/BaseCard.vue";
 
 import "element-plus/theme-chalk/display.css";
+import "vue3-carousel/dist/carousel.css";
 
 const app = createApp(App);
 
