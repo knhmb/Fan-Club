@@ -2,7 +2,7 @@
   <div class="creator-post">
     <base-container>
       <el-row>
-        <el-col :span="21">
+        <el-col class="hidden-sm-and-down" :span="21">
           <el-input
             v-model="input2"
             class="w-50 m-2"
@@ -10,7 +10,7 @@
             :prefix-icon="Search"
           />
         </el-col>
-        <el-col class="sorting" :span="3">
+        <el-col class="sorting hidden-sm-and-down" :span="3">
           <el-select v-model="value" placeholder="Select">
             <el-option />
           </el-select>

@@ -2,15 +2,21 @@
   <div class="post-card-info">
     <el-row>
       <el-col :span="12">
-        <img src="../../assets/creator01@2x.jpg" alt="" />
+        <img
+          :class="{ 'avatar-hidden': hideAvatar }"
+          src="../../assets/creator01@2x.jpg"
+          class="post-img"
+          alt=""
+        />
         <div class="content">
-          <h5>Ronald Richards</h5>
+          <h5 :class="{ 'avatar-hidden': hideAvatar }">Ronald Richards</h5>
           <p>2022-05-24 16:30</p>
         </div>
       </el-col>
       <el-col :span="12">
         <div class="plan-name">
-          <p>Plan name - Level 2</p>
+          <p v-if="!hideAvatar">Plan name - Level 2</p>
+          <p v-else>Public</p>
         </div>
       </el-col>
       <el-col class="pills">
@@ -30,7 +36,27 @@
           fringilla eu lobortis aliquet mauris.
         </p>
       </el-col>
-      <el-col class="plan-list">
+      <el-col v-if="hideAvatar">
+        <p class="hidden-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
+          fringilla eu lobortis aliquet mauris. Proin non, mauris tincidunt sed.
+          Ante non, est eget justo. Nisl, fermentum tellus non id lacus.
+          Felis...
+        </p>
+        <p class="read-more">Continue reading</p>
+      </el-col>
+      <el-col class="share-media" v-if="hideAvatar">
+        <div class="icons">
+          <img src="../../assets/like-outline-16x16@2x.png" alt="" />
+          <img src="../../assets/share-20x20@2x.png" alt="" />
+          <img src="../../assets/more@2x.png" alt="" />
+        </div>
+        <p class="likes">321 Like</p>
+      </el-col>
+      <el-col v-if="hideAvatar">
+        <more-comments></more-comments>
+      </el-col>
+      <el-col class="plan-list" v-if="!hideAvatar">
         <div class="plan-list-content">
           <div class="left-section">
             <img src="../../assets/lock@2x.png" alt="" />
@@ -42,6 +68,17 @@
     </el-row>
   </div>
 </template>
+
+<script>
+import MoreComments from "./MoreComments.vue";
+
+export default {
+  props: ["hideAvatar"],
+  components: {
+    MoreComments,
+  },
+};
+</script>
 
 <style scoped>
 .post-card-info {
@@ -58,6 +95,10 @@
   border: none;
   margin: 0;
   border-radius: 100%;
+}
+
+.post-card-info img.avatar-hidden {
+  display: none;
 }
 
 .plan .post-card-info .el-row .el-col {
@@ -81,6 +122,10 @@
   font-size: 14px;
   line-height: 20px;
   color: #191919;
+}
+
+.post-card-info .content h5.avatar-hidden {
+  display: none;
 }
 
 .post-card-info .content p {
@@ -120,6 +165,15 @@
   margin-top: 1rem;
 }
 
+.post-card-info .pill p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #525e66;
+}
+
 .post-card-info .pill:nth-of-type(2) {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -133,6 +187,48 @@
   line-height: 28px;
   color: #191919;
   margin-top: 2rem;
+}
+
+.post-card-info p.hidden-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #191919;
+  margin: 1rem 0;
+
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.post-card-info p.hidden-text::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    0deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.5) 51.56%,
+    rgba(217, 217, 217, 0) 100%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.post-card-info p.read-more {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0faaec;
+  cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 .post-card-info .el-col.plan-list .plan-list-content {
@@ -178,5 +274,42 @@
   line-height: 20px;
   color: #ffffff;
   padding: 1rem;
+}
+
+.post-card-info .share-media {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.post-card-info .icons img {
+  width: 1.3rem;
+  cursor: pointer;
+}
+
+.post-card-info .icons img:nth-of-type(2) {
+  margin: 0 1.5rem;
+}
+
+.post-card-info p.likes {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 540;
+  font-size: 14px;
+  line-height: 20px;
+  color: #616161;
+  font-variation-settings: "slnt" 0;
+}
+
+@media screen and (max-width: 715px) {
+  .post-card-info img.post-img,
+  .post-card-info h5 {
+    display: none;
+  }
+
+  .post-card-info .el-col.plan-list .plan-list-content .left-section p {
+    padding-right: 0.2rem;
+  }
 }
 </style>

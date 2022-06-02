@@ -1,7 +1,7 @@
 <template>
   <div class="post-card">
     <el-row :gutter="20">
-      <el-col :span="17">
+      <el-col :sm="24" :md="17">
         <!-- ========================================= First Card ========================================= -->
         <div class="card">
           <img src="../../assets/creator-post-img01@2x.jpg" alt="" />
@@ -41,8 +41,37 @@
             <post-card-info></post-card-info>
           </div>
         </div>
+        <!-- ========================================= Third Card ========================================= -->
+        <div class="card">
+          <img src="../../assets/creator-post-img01@2x.jpg" alt="" />
+          <!-- <Carousel :wrap-around="true" :breakpoints="breakpoints">
+            <Slide v-for="img in imgs" :key="img">
+              <img class="slider-img" :src="img.img" alt="" />
+            </Slide>
+
+            <template #addons>
+              <Navigation />
+            </template>
+          </Carousel> -->
+          <div class="post-card-content">
+            <post-card-info :hide-avatar="true"></post-card-info>
+          </div>
+        </div>
+        <!-- ========================================= Fourth Card ========================================= -->
+
+        <div class="card">
+          <div class="background-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit Tincidunt
+              fringilla eu lobortis aliquet mauris.
+            </p>
+          </div>
+          <div class="post-card-content">
+            <post-card-info :hide-avatar="true"></post-card-info>
+          </div>
+        </div>
       </el-col>
-      <el-col :span="7">
+      <el-col class="hidden-sm-and-down" :span="7">
         <popular-posts></popular-posts>
       </el-col>
     </el-row>
@@ -92,9 +121,9 @@ export default {
       ],
       breakpoints: {
         // 700px and up
-        700: {
-          itemsToShow: 3.5,
-          snapAlign: "center",
+        300: {
+          itemsToShow: 4.5,
+          snapAlign: "start",
         },
         // 1024 and up
         1024: {
@@ -162,6 +191,12 @@ export default {
 }
 
 .post-card .post-card-content {
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
+}
+
+@media screen and (max-width: 715px) {
+  .post-card .post-card-content {
+    padding: 1rem 1rem;
+  }
 }
 </style>
