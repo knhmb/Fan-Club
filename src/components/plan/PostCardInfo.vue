@@ -49,7 +49,27 @@
         <div class="icons">
           <img src="../../assets/like-outline-16x16@2x.png" alt="" />
           <img src="../../assets/share-20x20@2x.png" alt="" />
-          <img src="../../assets/more@2x.png" alt="" />
+          <div class="icon-more-content">
+            <img
+              @click="displayMoreOptions"
+              src="../../assets/more@2x.png"
+              alt=""
+            />
+            <div v-if="showMoreOptions" class="more-options">
+              <div class="option">
+                <img src="../../assets/link@2x.png" alt="" />
+                <p>Copy post link</p>
+              </div>
+              <div class="option">
+                <img src="../../assets/facebook-color@2x.png" alt="" />
+                <p>Facebook</p>
+              </div>
+              <div class="option">
+                <img src="../../assets/twitter-color@2x.png" alt="" />
+                <p>Twitter</p>
+              </div>
+            </div>
+          </div>
         </div>
         <p class="likes">321 Like</p>
       </el-col>
@@ -76,6 +96,16 @@ export default {
   props: ["hideAvatar"],
   components: {
     MoreComments,
+  },
+  data() {
+    return {
+      showMoreOptions: false,
+    };
+  },
+  methods: {
+    displayMoreOptions() {
+      this.showMoreOptions = !this.showMoreOptions;
+    },
   },
 };
 </script>
@@ -283,6 +313,10 @@ export default {
   margin-top: 1rem;
 }
 
+.post-card-info .icons {
+  position: relative;
+}
+
 .post-card-info .icons img {
   width: 1.3rem;
   cursor: pointer;
@@ -299,6 +333,55 @@ export default {
   font-size: 14px;
   line-height: 20px;
   color: #616161;
+  font-variation-settings: "slnt" 0;
+}
+
+.post-card-info .icon-more-content {
+  display: inline-block;
+  /* position: relative; */
+}
+
+.post-card-info .icon-more-content .more-options {
+  background: #ffffff;
+  box-shadow: 0px 2px 6px -4px rgba(16, 24, 41, 0.1),
+    0px 10px 15px -3px rgba(16, 24, 41, 0.1);
+  border-radius: 4px;
+  padding: 1rem;
+  position: absolute;
+  left: 50%;
+  min-width: 11rem;
+  top: 1.7rem;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+
+.post-card-info .icon-more-content .more-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card-info .icon-more-content .more-options .option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.post-card-info .icon-more-content .more-options .option:nth-of-type(2) {
+  margin: 1.5rem 0;
+}
+
+.post-card-info .icon-more-content .more-options .option img {
+  width: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.post-card-info .icon-more-content .more-options .option p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 540;
+  font-size: 14px;
+  line-height: 20px;
+  color: #525e66;
   font-variation-settings: "slnt" 0;
 }
 
