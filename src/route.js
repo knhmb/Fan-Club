@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Plan from "./pages/Plan";
 import ForgotPassword from "./pages/ForgotPassword";
 import SearchCreators from "./pages/SearchCreators";
+import HomeMember from "./pages/HomeMember";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -17,6 +18,7 @@ const router = createRouter({
     { path: "/plan", component: Plan },
     { path: "/forgot-password", component: ForgotPassword },
     { path: "/search-creators", component: SearchCreators },
+    { path: "/home-member", component: HomeMember },
   ],
 });
 

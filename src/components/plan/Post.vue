@@ -43,7 +43,8 @@ export default {
 <style scoped>
 .creator-post {
   padding: 1rem 0;
-  background-color: #cfdce6;
+  /* background-color: #cfdce6; */
+  background-color: #f0f6fa;
 }
 
 .creator-post .el-input {

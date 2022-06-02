@@ -85,7 +85,8 @@ export default {
 <style scoped>
 .creator-product {
   padding: 1rem 0;
-  background-color: #cfdce6;
+  /* background-color: #cfdce6; */
+  background-color: #f0f6fa;
 }
 
 .creator-product .card {

@@ -148,7 +148,8 @@ export default {
 
 <style scoped>
 .creator-profile {
-  background-color: #cfdce6;
+  /* background-color: #cfdce6; */
+  background-color: #f0f6fa;
 }
 
 .creator-profile .card {

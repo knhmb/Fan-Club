@@ -131,7 +131,9 @@
 <style scoped>
 .plan-tab {
   padding: 1rem 0;
-  background-color: #cfdce6;
+  /* background-color: #cfdce6; */
+  background-color: #f0f6fa;
+
   /* margin-top: 1rem; */
 }
 
