@@ -35,7 +35,7 @@
 }
 
 .banner p {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 1.375rem;
@@ -50,7 +50,7 @@
   border-radius: 5rem;
   padding: 1.2rem 2.5rem;
 
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;

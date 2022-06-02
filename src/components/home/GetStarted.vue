@@ -28,7 +28,7 @@
 }
 
 .get-started .el-button {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;

@@ -77,7 +77,7 @@ export default {
 
 <style>
 .register .register-form .el-form-item__label {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -96,7 +96,7 @@ export default {
   background: #0faaec;
   border-radius: 16px;
   padding: 1.3rem;
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -108,7 +108,7 @@ export default {
 }
 
 .register .register-form .el-divider__text {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -123,7 +123,7 @@ export default {
   border: 1px solid #525e66;
   border-radius: 16px;
 
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -142,7 +142,7 @@ export default {
 }
 
 .register .register-form p.policy {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

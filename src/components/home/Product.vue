@@ -125,7 +125,7 @@
 }
 
 .featured-products p {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -136,7 +136,7 @@
 }
 
 .featured-products .price {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;

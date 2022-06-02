@@ -37,7 +37,7 @@ export default {
 }
 
 .register p {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

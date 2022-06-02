@@ -156,7 +156,7 @@ export default {
 }
 
 .featured-posts p {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -178,7 +178,7 @@ export default {
 }
 
 .featured-posts .card .footer .subscribers p.name {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -188,7 +188,7 @@ export default {
 }
 
 .featured-posts .card .footer .subscribers span {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;

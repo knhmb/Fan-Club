@@ -160,7 +160,7 @@
 }
 
 .plan-tab .plan-card p.plan-name {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -187,7 +187,7 @@
 }
 
 .plan-tab .plan-card p {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -200,7 +200,7 @@
   background: #0faaec;
   border-radius: 80px;
   width: 60%;
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -212,7 +212,7 @@
 }
 
 .plan-tab .plan-card p.save {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -251,7 +251,7 @@
   background: none;
   border: none;
   margin: 0;
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

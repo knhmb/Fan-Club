@@ -31,7 +31,7 @@
 .footer {
   /* padding: 1.5rem 0; */
   background-color: #3d474d;
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -44,6 +44,7 @@
 .footer .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .footer ul {
@@ -52,7 +53,7 @@
 }
 
 .footer li {
-  /* font-family: "PingFang HK";
+  /* font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -72,7 +73,7 @@
 }
 
 .footer p.copyright {
-  /* font-family: "PingFang HK";
+  /* font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -99,8 +100,13 @@
     flex-direction: column;
   }
 
+  .footer .container {
+    align-items: flex-start;
+  }
+
   .footer ul {
     border-bottom: 1px solid #6f6f6f;
+    width: 100%;
   }
 
   .footer .social-media {

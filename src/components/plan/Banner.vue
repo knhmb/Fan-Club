@@ -150,7 +150,7 @@ export default {
 }
 
 .plan .personal-info p {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -287,7 +287,7 @@ export default {
 }
 
 .plan .tab-section .el-tabs__item {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

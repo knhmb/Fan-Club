@@ -216,7 +216,7 @@ export default {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -262,7 +262,7 @@ export default {
 }
 
 .explore .card .content p.desc {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -278,7 +278,7 @@ export default {
 }
 
 .explore .card .content .subscribers span {
-  font-family: "PingFang HK";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
