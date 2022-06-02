@@ -26,16 +26,19 @@
         </div>
       </div>
       <Creators v-if="tabOption === 'creators'" />
+      <Tags v-if="tabOption === 'tags'" />
     </base-container>
   </section>
 </template>
 
 <script>
 import Creators from "../components/search-creators/Creators.vue";
+import Tags from "../components/search-creators/Tags.vue";
 
 export default {
   components: {
     Creators,
+    Tags,
   },
   data() {
     return {
