@@ -171,6 +171,8 @@ export default {
   background: #f3f3f3;
   border-radius: 4px;
   padding: 0.3rem 0.5rem;
+  width: fit-content;
+  margin-left: auto;
 }
 
 .post-card-info .plan-name p {

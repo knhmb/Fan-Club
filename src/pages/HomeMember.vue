@@ -1,8 +1,8 @@
 <template>
   <section class="home-member">
     <base-container>
-      <el-row>
-        <el-col :span="7">
+      <el-row :gutter="20">
+        <el-col :span="7" class="hidden-sm-and-down">
           <div class="card">
             <div class="img-content">
               <img src="../assets/Ellipse-17.png" alt="" />
@@ -12,6 +12,9 @@
             <Following />
           </div>
         </el-col>
+        <el-col :sm="24" :md="17">
+          <right-section></right-section>
+        </el-col>
       </el-row>
     </base-container>
   </section>
@@ -20,11 +23,13 @@
 <script>
 import Supporting from "../components/home-member/Supporting.vue";
 import Following from "../components/home-member/Following.vue";
+import RightSection from "../components/home-member/RightSection.vue";
 
 export default {
   components: {
     Supporting,
     Following,
+    RightSection,
   },
 };
 </script>
