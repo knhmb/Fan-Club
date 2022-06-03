@@ -388,9 +388,17 @@ export default {
 }
 
 @media screen and (max-width: 715px) {
-  .post-card-info img.post-img,
+  /* .post-card-info img.post-img,
   .post-card-info h5 {
     display: none;
+  } */
+
+  .post-card-info .content h5 {
+    font-size: 12px;
+  }
+
+  .post-card-info .content p {
+    font-size: 10px;
   }
 
   .post-card-info .el-col.plan-list .plan-list-content .left-section p {

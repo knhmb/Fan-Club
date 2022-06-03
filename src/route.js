@@ -7,6 +7,7 @@ import Plan from "./pages/Plan";
 import ForgotPassword from "./pages/ForgotPassword";
 import SearchCreators from "./pages/SearchCreators";
 import HomeMember from "./pages/HomeMember";
+import SearchTagsResults from "./pages/SearchTagsResults";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -19,6 +20,7 @@ const router = createRouter({
     { path: "/forgot-password", component: ForgotPassword },
     { path: "/search-creators", component: SearchCreators },
     { path: "/home-member", component: HomeMember },
+    { path: "/search-tags-results", component: SearchTagsResults },
   ],
 });
 
