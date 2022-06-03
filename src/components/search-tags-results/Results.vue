@@ -144,7 +144,7 @@ export default {
 
 <style scoped>
 .post-card {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 
 .post-card .card {

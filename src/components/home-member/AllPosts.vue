@@ -110,7 +110,7 @@ export default {
 </script>
 
 <style scoped>
-.post-card {
+.home-member-right-section .post-card {
   margin-top: 2rem;
 }
 

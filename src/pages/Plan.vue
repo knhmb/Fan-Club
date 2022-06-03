@@ -1,6 +1,7 @@
 <template>
   <section class="plan">
     <Banner />
+    <router-view></router-view>
     <!-- <base-container>
       <img src="../" alt="" />
     </base-container> -->

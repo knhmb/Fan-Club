@@ -110,7 +110,7 @@ export default {
 </script>
 
 <style scoped>
-.post-card {
+.creator-profile .post-card {
   margin-top: 2rem;
 }
 

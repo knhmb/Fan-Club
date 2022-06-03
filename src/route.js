@@ -8,19 +8,44 @@ import ForgotPassword from "./pages/ForgotPassword";
 import SearchCreators from "./pages/SearchCreators";
 import HomeMember from "./pages/HomeMember";
 import SearchTagsResults from "./pages/SearchTagsResults";
+import Profile from "./components/plan/Profile";
+import PlanTab from "./components/plan/PlanTab";
+import Product from "./components/plan/Product";
+import Post from "./components/plan/Post";
+import PostDetail from "./pages/PostDetail";
 
 const router = createRouter({
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0, behavior: "smooth" };
+    }
+  },
   history: createWebHistory(),
   routes: [
     { path: "/home", component: Home },
     { path: "/", redirect: "/home" },
     { path: "/login", component: Login },
     { path: "/register", component: Register },
-    { path: "/plan", component: Plan },
     { path: "/forgot-password", component: ForgotPassword },
     { path: "/search-creators", component: SearchCreators },
     { path: "/home-member", component: HomeMember },
     { path: "/search-tags-results", component: SearchTagsResults },
+    {
+      path: "/creator",
+      component: Plan,
+      children: [
+        { path: "profile", component: Profile },
+        { path: "plan", component: PlanTab },
+        { path: "product", component: Product },
+        {
+          path: "post",
+          component: Post,
+          children: [{ path: "post-detail", component: PostDetail }],
+        },
+      ],
+    },
   ],
 });
 

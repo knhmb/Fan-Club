@@ -1,5 +1,5 @@
 <template>
-  <div class="post-card-info">
+  <div class="post-card-info-detail">
     <el-row>
       <el-col :span="12">
         <img
@@ -38,14 +38,46 @@
       </el-col>
       <el-col v-if="hideAvatar">
         <p class="hidden-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
-          fringilla eu lobortis aliquet mauris. Proin non, mauris tincidunt sed.
-          Ante non, est eget justo. Nisl, fermentum tellus non id lacus.
-          Felis...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin risus
+          urna consectetur sed enim eget fames morbi ut. Quis pretium vel, eget
+          magna hendrerit. Enim iaculis morbi feugiat diam, non id bibendum
+          vulputate suscipit. Pulvinar ut nunc gravida et quis ac pharetra.
+          Suspendisse aliquam tristique non mi. Non tellus libero sed
+          ullamcorper suspendisse. Pulvinar tellus et mi mi. Adipiscing sed quam
+          sed massa elementum. At non amet morbi quam nullam pharetra sapien. Mi
+          faucibus condimentum mi sapien enim. Netus maecenas fermentum amet,
+          viverra nullam elementum nulla. Sed adipiscing porttitor morbi
+          imperdiet felis tempor commodo, curabitur nullam. Sit risus a risus
+          urna dignissim viverra.
         </p>
-        <p class="read-more" @click="$router.push('/creator/post/post-detail')">
-          Continue reading
+        <p class="hidden-text">
+          Mattis ultricies varius nisl eu amet aliquet. Aliquet tellus, fusce
+          accumsan, luctus mollis. Ultrices fermentum pellentesque amet nunc.
+          Interdum in nulla quam mattis ac ultrices. Diam eu urna lectus et
+          posuere vitae arcu diam scelerisque. Sed sagittis, dui interdum et eu
+          pharetra in eget vitae. Turpis ac, sed rhoncus sem eu in mattis nisl.
+          A, dis at ultricies lacus nisl interdum. Est fermentum, vitae sit
+          pellentesque porta. Placerat bibendum et pretium lorem eget tellus,
+          vel senectus ac. Vel pulvinar ac condimentum turpis diam. Imperdiet
+          morbi magna pulvinar pharetra nunc scelerisque adipiscing amet.
+          Sollicitudin venenatis curabitur in morbi viverra at sed. Risus
+          pellentesque ullamcorper at ullamcorper. Scelerisque parturient velit
+          pellentesque donec convallis ut et maecenas.
         </p>
+        <p class="hidden-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin risus
+          urna consectetur sed enim eget fames morbi ut. Quis pretium vel, eget
+          magna hendrerit. Enim iaculis morbi feugiat diam, non id bibendum
+          vulputate suscipit. Pulvinar ut nunc gravida et quis ac pharetra.
+          Suspendisse aliquam tristique non mi. Non tellus libero sed
+          ullamcorper suspendisse. Pulvinar tellus et mi mi. Adipiscing sed quam
+          sed massa elementum. At non amet morbi quam nullam pharetra sapien. Mi
+          faucibus condimentum mi sapien enim. Netus maecenas fermentum amet,
+          viverra nullam elementum nulla. Sed adipiscing porttitor morbi
+          imperdiet felis tempor commodo, curabitur nullam. Sit risus a risus
+          urna dignissim viverra.
+        </p>
+        <!-- <p class="read-more">Continue reading</p> -->
       </el-col>
       <el-col class="share-media" v-if="hideAvatar">
         <div class="icons">
@@ -113,41 +145,41 @@ export default {
 </script>
 
 <style scoped>
-.post-card-info {
+.post-card-info-detail {
   margin-top: 1rem;
 }
 
-.post-card-info .el-row .el-col:first-of-type {
+.post-card-info-detail .el-row .el-col:first-of-type {
   display: flex;
   align-items: center;
 }
 
-.post-card-info img {
+.post-card-info-detail img {
   width: 3rem;
   border: none;
   margin: 0;
   border-radius: 100%;
 }
 
-.post-card-info img.avatar-hidden {
+.post-card-info-detail img.avatar-hidden {
   display: none;
 }
 
-.plan .post-card-info .el-row .el-col {
+.plan .post-card-info-detail .el-row .el-col {
   text-align: start;
 }
 
-.plan .post-card-info .el-row .el-col:nth-of-type(2) {
+.plan .post-card-info-detail .el-row .el-col:nth-of-type(2) {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.post-card-info .content {
+.post-card-info-detail .content {
   margin-left: 0.5rem;
 }
 
-.post-card-info .content h5 {
+.post-card-info-detail .content h5 {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
@@ -156,11 +188,11 @@ export default {
   color: #191919;
 }
 
-.post-card-info .content h5.avatar-hidden {
+.post-card-info-detail .content h5.avatar-hidden {
   display: none;
 }
 
-.post-card-info .content p {
+.post-card-info-detail .content p {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -169,7 +201,7 @@ export default {
   color: #616161;
 }
 
-.post-card-info .plan-name {
+.post-card-info-detail .plan-name {
   background: #f3f3f3;
   border-radius: 4px;
   padding: 0.3rem 0.5rem;
@@ -177,7 +209,7 @@ export default {
   margin-left: auto;
 }
 
-.post-card-info .plan-name p {
+.post-card-info-detail .plan-name p {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -186,11 +218,11 @@ export default {
   color: #616161;
 }
 
-.post-card-info .el-col.pills {
+.post-card-info-detail .el-col.pills {
   display: flex;
 }
 
-.post-card-info .pill {
+.post-card-info-detail .pill {
   background: #ffffff;
   border: 1px solid #cfdce6;
   border-radius: 40px;
@@ -199,7 +231,7 @@ export default {
   margin-top: 1rem;
 }
 
-.post-card-info .pill p {
+.post-card-info-detail .pill p {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -208,12 +240,12 @@ export default {
   color: #525e66;
 }
 
-.post-card-info .pill:nth-of-type(2) {
+.post-card-info-detail .pill:nth-of-type(2) {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 
-.post-card-info p.description {
+.post-card-info-detail p.description {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
@@ -223,7 +255,7 @@ export default {
   margin-top: 2rem;
 }
 
-.post-card-info p.hidden-text {
+.post-card-info-detail p.hidden-text {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -238,7 +270,7 @@ export default {
   position: relative;
 }
 
-.post-card-info p.hidden-text::after {
+/* .post-card-info-detail p.hidden-text::after {
   content: "";
   position: absolute;
   background: linear-gradient(
@@ -252,9 +284,9 @@ export default {
   bottom: 0;
   height: 100%;
   width: 100%;
-}
+} */
 
-.post-card-info p.read-more {
+/* .post-card-info-detail p.read-more {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -263,33 +295,33 @@ export default {
   color: #0faaec;
   cursor: pointer;
   margin-top: 0.5rem;
-}
+} */
 
-.post-card-info .el-col.plan-list .plan-list-content {
+.post-card-info-detail .el-col.plan-list .plan-list-content {
   background: #f3f3f3;
   border-radius: 4px;
   padding: 0.5rem;
   margin-top: 1.5rem;
 }
 
-.post-card-info .el-col.plan-list .plan-list-content .left-section,
-.post-card-info .el-col.plan-list .plan-list-content {
+.post-card-info-detail .el-col.plan-list .plan-list-content .left-section,
+.post-card-info-detail .el-col.plan-list .plan-list-content {
   display: flex;
   align-items: center;
 }
 
-.post-card-info .el-col.plan-list .plan-list-content {
+.post-card-info-detail .el-col.plan-list .plan-list-content {
   justify-content: space-between;
 }
 
-.post-card-info .el-col.plan-list .plan-list-content .left-section img {
+.post-card-info-detail .el-col.plan-list .plan-list-content .left-section img {
   width: 1.5rem;
   border: none;
   border-radius: 0;
   margin-right: 0.5rem;
 }
 
-.post-card-info .el-col.plan-list .plan-list-content .left-section p {
+.post-card-info-detail .el-col.plan-list .plan-list-content .left-section p {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -297,7 +329,7 @@ export default {
   line-height: 20px;
   color: #616161;
 }
-.post-card-info .el-col.plan-list .plan-list-content .el-button {
+.post-card-info-detail .el-col.plan-list .plan-list-content .el-button {
   background: #0faaec;
   border-radius: 40px;
 
@@ -310,27 +342,27 @@ export default {
   padding: 1rem;
 }
 
-.post-card-info .share-media {
+.post-card-info-detail .share-media {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
 }
 
-.post-card-info .icons {
+.post-card-info-detail .icons {
   position: relative;
 }
 
-.post-card-info .icons img {
+.post-card-info-detail .icons img {
   width: 1.3rem;
   cursor: pointer;
 }
 
-.post-card-info .icons img:nth-of-type(2) {
+.post-card-info-detail .icons img:nth-of-type(2) {
   margin: 0 1.5rem;
 }
 
-.post-card-info p.likes {
+.post-card-info-detail p.likes {
   font-family: "Inter";
   font-style: normal;
   font-weight: 540;
@@ -340,12 +372,12 @@ export default {
   font-variation-settings: "slnt" 0;
 }
 
-.post-card-info .icon-more-content {
+.post-card-info-detail .icon-more-content {
   display: inline-block;
   /* position: relative; */
 }
 
-.post-card-info .icon-more-content .more-options {
+.post-card-info-detail .icon-more-content .more-options {
   background: #ffffff;
   box-shadow: 0px 2px 6px -4px rgba(16, 24, 41, 0.1),
     0px 10px 15px -3px rgba(16, 24, 41, 0.1);
@@ -359,27 +391,27 @@ export default {
   transform: translateX(-50%);
 }
 
-.post-card-info .icon-more-content .more-options {
+.post-card-info-detail .icon-more-content .more-options {
   display: flex;
   flex-direction: column;
 }
 
-.post-card-info .icon-more-content .more-options .option {
+.post-card-info-detail .icon-more-content .more-options .option {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-.post-card-info .icon-more-content .more-options .option:nth-of-type(2) {
+.post-card-info-detail .icon-more-content .more-options .option:nth-of-type(2) {
   margin: 1.5rem 0;
 }
 
-.post-card-info .icon-more-content .more-options .option img {
+.post-card-info-detail .icon-more-content .more-options .option img {
   width: 1.2rem;
   margin-right: 0.5rem;
 }
 
-.post-card-info .icon-more-content .more-options .option p {
+.post-card-info-detail .icon-more-content .more-options .option p {
   font-family: "Inter";
   font-style: normal;
   font-weight: 540;
@@ -390,20 +422,20 @@ export default {
 }
 
 @media screen and (max-width: 715px) {
-  /* .post-card-info img.post-img,
-  .post-card-info h5 {
+  /* .post-card-info-detail img.post-img,
+  .post-card-info-detail h5 {
     display: none;
   } */
 
-  .post-card-info .content h5 {
+  .post-card-info-detail .content h5 {
     font-size: 12px;
   }
 
-  .post-card-info .content p {
+  .post-card-info-detail .content p {
     font-size: 10px;
   }
 
-  .post-card-info .el-col.plan-list .plan-list-content .left-section p {
+  .post-card-info-detail .el-col.plan-list .plan-list-content .left-section p {
     padding-right: 0.2rem;
   }
 }

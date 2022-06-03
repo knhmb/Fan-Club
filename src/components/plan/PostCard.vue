@@ -3,7 +3,7 @@
     <el-row :gutter="20">
       <el-col :sm="24" :md="17">
         <!-- ========================================= First Card ========================================= -->
-        <div class="card">
+        <div class="card" v-if="$route.path !== '/creator/post/post-detail'">
           <img src="../../assets/creator-post-img01@2x.jpg" alt="" />
           <Carousel :wrap-around="true" :breakpoints="breakpoints">
             <Slide v-for="img in imgs" :key="img">
@@ -20,7 +20,7 @@
         </div>
         <!-- ========================================= Second Card ========================================= -->
 
-        <div class="card">
+        <div class="card" v-if="$route.path !== '/creator/post/post-detail'">
           <div class="background-content">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit Tincidunt
@@ -42,7 +42,7 @@
           </div>
         </div>
         <!-- ========================================= Third Card ========================================= -->
-        <div class="card">
+        <div class="card" v-if="$route.path !== '/creator/post/post-detail'">
           <img src="../../assets/creator-post-img01@2x.jpg" alt="" />
           <!-- <Carousel :wrap-around="true" :breakpoints="breakpoints">
             <Slide v-for="img in imgs" :key="img">
@@ -59,7 +59,7 @@
         </div>
         <!-- ========================================= Fourth Card ========================================= -->
 
-        <div class="card">
+        <div class="card" v-if="$route.path !== '/creator/post/post-detail'">
           <div class="background-content">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit Tincidunt
@@ -70,6 +70,7 @@
             <post-card-info :hide-avatar="true"></post-card-info>
           </div>
         </div>
+        <router-view></router-view>
       </el-col>
       <el-col class="hidden-sm-and-down" :span="7">
         <popular-posts></popular-posts>
@@ -138,7 +139,7 @@ export default {
 
 <style scoped>
 .post-card {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 
 .post-card .card {

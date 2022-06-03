@@ -1,7 +1,10 @@
 <template>
   <div class="creator-post">
     <base-container>
-      <el-row>
+      <el-row
+        class="search-filter-section"
+        v-if="$route.path !== '/creator/post/post-detail'"
+      >
         <el-col class="hidden-sm-and-down" :span="21">
           <el-input
             v-model="input2"
@@ -45,6 +48,10 @@ export default {
   padding: 1rem 0;
   /* background-color: #cfdce6; */
   background-color: #f0f6fa;
+}
+
+.creator-post .el-row.search-filter-section {
+  margin-bottom: 2rem;
 }
 
 .creator-post .el-input {

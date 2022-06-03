@@ -45,26 +45,30 @@
     <base-container>
       <ul>
         <li
-          @click="setTabOption('home')"
-          :class="{ 'is-active': tabOption === 'home' }"
+          @click="$router.push('/creator/profile')"
+          :class="{ 'is-active': $route.path === '/creator/profile' }"
         >
           Home
         </li>
         <li
-          @click="setTabOption('plan')"
-          :class="{ 'is-active': tabOption === 'plan' }"
+          @click="$router.push('/creator/plan')"
+          :class="{ 'is-active': $route.path === '/creator/plan' }"
         >
           Plan
         </li>
         <li
-          @click="setTabOption('post')"
-          :class="{ 'is-active': tabOption === 'post' }"
+          @click="$router.push('/creator/post')"
+          :class="{
+            'is-active':
+              $route.path === '/creator/post' ||
+              $route.path === '/creator/post/post-detail',
+          }"
         >
           Post
         </li>
         <li
-          @click="setTabOption('product')"
-          :class="{ 'is-active': tabOption === 'product' }"
+          @click="$router.push('/creator/product')"
+          :class="{ 'is-active': $route.path === '/creator/product' }"
         >
           Product
         </li>
@@ -76,25 +80,25 @@
       <el-tab-pane label="Post" name="post">Post</el-tab-pane>
     </el-tabs> -->
   </div>
-  <plan-tab v-if="tabOption === 'plan'"></plan-tab>
+  <!-- <plan-tab v-if="tabOption === 'plan'"></plan-tab>
   <product v-if="tabOption === 'product'"></product>
   <Post v-if="tabOption === 'post'" />
-  <Profile v-if="tabOption === 'home'" />
+  <Profile v-if="tabOption === 'home'" /> -->
 </template>
 
 <script>
-import PlanTab from "../../components/plan/PlanTab.vue";
-import Product from "../../components/plan/Product.vue";
-import Post from "../../components/plan/Post.vue";
-import Profile from "./Profile.vue";
+// import PlanTab from "../../components/plan/PlanTab.vue";
+// import Product from "../../components/plan/Product.vue";
+// import Post from "../../components/plan/Post.vue";
+// import Profile from "./Profile.vue";
 import { Plus } from "@element-plus/icons-vue";
 
 export default {
   components: {
-    PlanTab,
-    Product,
-    Post,
-    Profile,
+    // PlanTab,
+    // Product,
+    // Post,
+    // Profile,
   },
   data() {
     return {
