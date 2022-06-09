@@ -8,7 +8,12 @@
         alt=""
       />
       <div v-if="!isMobileViewport" class="search-bar">
-        <img class="language" src="../../assets/language.svg" alt="" />
+        <img
+          @click="dialogVisible = true"
+          class="language"
+          src="../../assets/language.svg"
+          alt=""
+        />
         <el-input
           :prefix-icon="Search"
           placeholder="Search Creators and tags"
@@ -22,6 +27,24 @@
       </div>
     </base-container>
   </header>
+  <el-dialog custom-class="locale" v-model="dialogVisible">
+    <div class="header">
+      <p>Choose your language</p>
+    </div>
+    <div class="body">
+      <div class="tab">
+        <p>繁體中文</p>
+      </div>
+    </div>
+    <!-- <template #footer>
+      <span class="dialog-footer">
+        <el-button @click="dialogVisible = false">Cancel</el-button>
+        <el-button type="primary" @click="dialogVisible = false"
+          >Confirm</el-button
+        >
+      </span>
+    </template> -->
+  </el-dialog>
 </template>
 
 <script>
@@ -36,6 +59,7 @@ export default {
         width: 0,
         height: 0,
       },
+      dialogVisible: false,
     };
   },
   watch: {
@@ -97,6 +121,7 @@ export default {
   background-color: #ebf1f5;
   padding: 0.5rem;
   border-radius: 5rem;
+  cursor: pointer;
 }
 
 .header .search-bar .el-input {
@@ -130,5 +155,49 @@ export default {
   display: block;
   margin: 4px 0;
   border-radius: 6px;
+}
+
+.el-dialog.locale {
+  width: 20rem;
+}
+
+.el-dialog.locale .el-dialog__headerbtn {
+  display: none;
+}
+
+.el-dialog.locale .el-dialog__header,
+.el-dialog.locale .el-dialog__body {
+  padding: 0;
+}
+
+.el-dialog.locale .header,
+.el-dialog.locale .body {
+  padding: 1rem;
+  border-bottom: 1px solid #cfdce6;
+}
+
+.el-dialog.locale .header p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 540;
+  font-size: 14px;
+  line-height: 20px;
+  color: #525e66;
+  font-variation-settings: "slnt" 0;
+}
+
+.el-dialog.locale .body .tab {
+  border: 1px solid #cfdce6;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+.el-dialog.locale .body .tab p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #525e66;
 }
 </style>
