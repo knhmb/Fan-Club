@@ -2,7 +2,49 @@
   <section class="profile-settings">
     <base-container>
       <h4>Profile setting</h4>
-      <div class="tab-content">
+      <Carousel :breakpoints="breakpoints" class="hidden-md-and-up">
+        <Slide v-for="slide in tabOptions" :key="slide">
+          <div class="tab-content">
+            <div
+              @click="$router.push(slide.path)"
+              class="single-tab"
+              :class="{
+                'is-active': $route.path === slide.path,
+              }"
+            >
+              <p>{{ slide.name }}</p>
+            </div>
+
+            <!-- <div
+              @click="setTabOption('password')"
+              class="single-tab"
+              :class="{ 'is-active': tabOption === 'password' }"
+            >
+              <p>Password</p>
+            </div>
+            <div
+              @click="setTabOption('subscription')"
+              class="single-tab"
+              :class="{ 'is-active': tabOption === 'subscription' }"
+            >
+              <p>Subscription plan history</p>
+            </div>
+            <div
+              @click="setTabOption('product')"
+              class="single-tab"
+              :class="{ 'is-active': tabOption === 'product' }"
+            >
+              <p>Product history</p>
+            </div> -->
+          </div>
+        </Slide>
+
+        <template #addons>
+          <Navigation />
+          <Pagination />
+        </template>
+      </Carousel>
+      <div class="tab-content hidden-sm-and-down">
         <div
           @click="$router.push('/profile-settings/profile-information')"
           class="single-tab"
@@ -42,10 +84,47 @@
 </template>
 
 <script>
+import { Carousel, Navigation, Slide } from "vue3-carousel";
+
 export default {
+  components: {
+    Carousel,
+    Navigation,
+    Slide,
+  },
   data() {
     return {
       tabOption: "creators",
+      tabOptions: [
+        {
+          name: "Profile",
+          path: "/profile-settings/profile-information",
+        },
+        {
+          name: "Password",
+          path: null,
+        },
+        {
+          name: "Subscription plan history",
+          path: null,
+        },
+        {
+          name: "Product history",
+          path: null,
+        },
+      ],
+      breakpoints: {
+        // 700px and up
+        300: {
+          itemsToShow: 3,
+          snapAlign: "center",
+        },
+        // 1024 and up
+        1024: {
+          itemsToShow: 4,
+          snapAlign: "start",
+        },
+      },
     };
   },
   methods: {
@@ -114,5 +193,30 @@ export default {
   line-height: 20px;
   color: #525e66;
   font-variation-settings: "slnt" 0;
+}
+
+.profile-settings :deep(.carousel .carousel__prev),
+.profile-settings :deep(.carousel .carousel__next) {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .profile-settings .tab-content {
+    border-bottom: none;
+  }
+
+  .profile-settings {
+    position: relative;
+  }
+
+  .profile-settings::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(207, 220, 230, 0.5);
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: 9rem;
+  }
 }
 </style>

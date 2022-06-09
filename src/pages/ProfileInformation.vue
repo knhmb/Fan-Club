@@ -2,10 +2,10 @@
   <section class="profile-information">
     <div class="card">
       <el-row>
-        <el-col :span="12">
+        <el-col :sm="24" :md="12">
           <h4>Profile Information</h4>
         </el-col>
-        <el-col :span="12">
+        <el-col :sm="24" :md="12">
           <p class="avatar">Avatar</p>
           <div class="change-avatar">
             <img src="../assets/avatar-1.png" alt="" />
@@ -88,5 +88,15 @@ export default {
   color: #0faaec;
   font-variation-settings: "slnt" 0;
   margin-left: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+  .profile-information {
+    margin: 1rem 0;
+  }
+
+  .profile-information .card h4 {
+    margin-bottom: 2rem;
+  }
 }
 </style>
