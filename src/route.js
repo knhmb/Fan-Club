@@ -15,6 +15,8 @@ import Post from "./components/plan/Post";
 import PostDetail from "./pages/PostDetail";
 import ProfileSettings from "./pages/ProfileSettings";
 import ProfileInformation from "./pages/ProfileInformation";
+import ChangePassword from "./pages/ChangePassword";
+import SubscriptionPlan from "./pages/SubscriptionPlan";
 
 const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
@@ -53,6 +55,8 @@ const router = createRouter({
       component: ProfileSettings,
       children: [
         { path: "profile-information", component: ProfileInformation },
+        { path: "change-password", component: ChangePassword },
+        { path: "subscription-plan", component: SubscriptionPlan },
       ],
     },
   ],

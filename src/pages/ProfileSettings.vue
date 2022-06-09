@@ -57,16 +57,20 @@
         </div>
 
         <div
-          @click="setTabOption('password')"
+          @click="$router.push('/profile-settings/change-password')"
           class="single-tab"
-          :class="{ 'is-active': tabOption === 'password' }"
+          :class="{
+            'is-active': $route.path === '/profile-settings/change-password',
+          }"
         >
           <p>Password</p>
         </div>
         <div
-          @click="setTabOption('subscription')"
+          @click="$router.push('/profile-settings/subscription-plan')"
           class="single-tab"
-          :class="{ 'is-active': tabOption === 'subscription' }"
+          :class="{
+            'is-active': $route.path === '/profile-settings/subscription-plan',
+          }"
         >
           <p>Subscription plan history</p>
         </div>
@@ -102,11 +106,11 @@ export default {
         },
         {
           name: "Password",
-          path: null,
+          path: "/profile-settings/change-password",
         },
         {
           name: "Subscription plan history",
-          path: null,
+          path: "/profile-settings/subscription-plan",
         },
         {
           name: "Product history",
