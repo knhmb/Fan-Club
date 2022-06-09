@@ -13,6 +13,8 @@ import PlanTab from "./components/plan/PlanTab";
 import Product from "./components/plan/Product";
 import Post from "./components/plan/Post";
 import PostDetail from "./pages/PostDetail";
+import ProfileSettings from "./pages/ProfileSettings";
+import ProfileInformation from "./pages/ProfileInformation";
 
 const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
@@ -44,6 +46,13 @@ const router = createRouter({
           component: Post,
           children: [{ path: "post-detail", component: PostDetail }],
         },
+      ],
+    },
+    {
+      path: "/profile-settings",
+      component: ProfileSettings,
+      children: [
+        { path: "profile-information", component: ProfileInformation },
       ],
     },
   ],
