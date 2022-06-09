@@ -16,14 +16,17 @@
       </el-row>
     </div>
   </section>
+  <social-media></social-media>
 </template>
 
 <script>
 import Form from "../components/profile-information/Form.vue";
+import SocialMedia from "../components/profile-information/SocialMedia.vue";
 
 export default {
   components: {
     Form,
+    SocialMedia,
   },
 };
 </script>
