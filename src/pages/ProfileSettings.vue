@@ -75,9 +75,11 @@
           <p>Subscription plan history</p>
         </div>
         <div
-          @click="setTabOption('product')"
+          @click="$router.push('/profile-settings/product-history')"
           class="single-tab"
-          :class="{ 'is-active': tabOption === 'product' }"
+          :class="{
+            'is-active': $route.path === '/profile-settings/product-history',
+          }"
         >
           <p>Product history</p>
         </div>
@@ -114,7 +116,7 @@ export default {
         },
         {
           name: "Product history",
-          path: null,
+          path: "/profile-settings/product-history",
         },
       ],
       breakpoints: {
@@ -153,6 +155,7 @@ export default {
   line-height: 32px;
   color: #191919;
   font-variation-settings: "slnt" 0;
+  margin-bottom: 3rem;
 }
 
 .profile-settings .tab-content {
@@ -220,7 +223,7 @@ export default {
     width: 100%;
     height: 1px;
     left: 0;
-    top: 9rem;
+    top: 12.5rem;
   }
 }
 </style>

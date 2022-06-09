@@ -17,6 +17,7 @@ import ProfileSettings from "./pages/ProfileSettings";
 import ProfileInformation from "./pages/ProfileInformation";
 import ChangePassword from "./pages/ChangePassword";
 import SubscriptionPlan from "./pages/SubscriptionPlan";
+import ProductHistory from "./pages/ProductHistory";
 
 const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
@@ -57,6 +58,7 @@ const router = createRouter({
         { path: "profile-information", component: ProfileInformation },
         { path: "change-password", component: ChangePassword },
         { path: "subscription-plan", component: SubscriptionPlan },
+        { path: "product-history", component: ProductHistory },
       ],
     },
   ],

@@ -1,7 +1,7 @@
 <template>
   <section class="subscription-plan">
     <el-row :gutter="20">
-      <el-col v-for="user in users" :key="user" :span="8">
+      <el-col v-for="user in users" :key="user" :sm="12" :md="8">
         <div class="card">
           <div class="card-header">
             <img src="../assets/Ellipse-17-3.png" alt="" />
