@@ -18,6 +18,7 @@ import ProfileInformation from "./pages/ProfileInformation";
 import ChangePassword from "./pages/ChangePassword";
 import SubscriptionPlan from "./pages/SubscriptionPlan";
 import ProductHistory from "./pages/ProductHistory";
+import Notification from "./pages/Notification";
 
 const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
@@ -61,6 +62,7 @@ const router = createRouter({
         { path: "product-history", component: ProductHistory },
       ],
     },
+    { path: "/notification", component: Notification },
   ],
 });
 
