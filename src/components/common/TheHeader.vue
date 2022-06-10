@@ -19,7 +19,7 @@
           placeholder="Search Creators and tags"
         ></el-input>
         <el-button>Become Member</el-button>
-        <div class="notification-alerts">
+        <div @click="navigate('/notifications')" class="notification-alerts">
           <img
             class="notification-icon"
             src="../../assets/notification-16x16@2x.png"
@@ -35,9 +35,11 @@
             alt=""
           />
           <div v-if="isProfileMenuVisible" class="profile-menu">
-            <p>Home</p>
-            <p>Creator Profile</p>
-            <p>Profile Setting</p>
+            <p @click="navigate('/')">Home</p>
+            <p @click="navigate('/creator/profile')">Creator Profile</p>
+            <p @click="navigate('/profile-settings/profile-information')">
+              Profile Setting
+            </p>
             <p>Help centre & FAQ</p>
             <p>Log out</p>
           </div>
@@ -149,6 +151,9 @@ export default {
     setLanguage(lang) {
       this.language = lang;
     },
+    navigate(path) {
+      this.$router.push(path);
+    },
   },
   created() {
     window.addEventListener("resize", this.handleResize);
@@ -196,6 +201,7 @@ export default {
   width: 1rem;
   position: relative;
   margin-left: 0.5rem;
+  cursor: pointer;
 }
 
 .header .search-bar img.notification-icon {
