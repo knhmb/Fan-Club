@@ -62,7 +62,7 @@ const router = createRouter({
         { path: "product-history", component: ProductHistory },
       ],
     },
-    { path: "/notification", component: Notification },
+    { path: "/notifications", component: Notification },
   ],
 });
 
